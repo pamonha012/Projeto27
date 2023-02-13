@@ -1,6 +1,6 @@
 <?php
     include("conectadb.php"); //Inclusão do Banco de dados pegando SQL do banco 
-    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's';"; //passa uma instrução para o BANCO, com comandos SQL listando os usuários 
+    $sql = "SELECT * FROM produtos;"; //passa uma instrução para o BANCO, com comandos SQL listando os produtos
     $resultado = mysqli_query($link, $sql); 
 ?>
 
@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./estilos.css">
-        <title>Lista Usuários</title>
+        <title>Lista Produtos</title>
     </head>
     <body>
         <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
@@ -19,19 +19,20 @@
             <table border=1>
                 <tr>
                     <th>Nome</th>
-                    <th>Alterar Dados</th>
-                    <th>Status Usuário</th>
+                    <th>Descrição do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Alterar produto</th>
                 </tr>
                 <?php 
                     while($tbl = mysqli_fetch_array($resultado)){
                 ?>
                         <tr>
-                            <td><?=$tbl[1]?></td> <!-- traz somente a coluna NOME para apresentar na tabela -->
-                            <!-- ao clicar no botão ele ja trará o ID do usuário para a página do alterar -->
-                            <td><a href="alterarusuario.php?id=<?= $tbl[0]?>"><input type="button" value="Alterar"></a></td>
-                            <td><?=$check = ($tbl[3] == "s")?"Ativo":"Desativado"?></td>
-                            <!-- ao clicar no botão ele já trará o ID do usuário para a página do ecluir -->
-                            <!-- <td><a href="excluirusuario.php?id=<//?= $tbl[0]?>"><input type="button" value="Excluir"></a></td> -->
+                            <td><?=$tbl[1]?></td>
+                            <td><?=$tbl[2]?></td>
+                            <td><?=$tbl[3]?></td>
+                            <td>R$<?=$tbl[4]?></td>
+                            <td><a href="alterarproduto.php?id=<?= $tbl[0]?>"><input type="button" value="Alterar"></a></td>
                         </tr>
                 <?php
                     } 
