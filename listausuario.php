@@ -1,7 +1,20 @@
 <?php
     include("conectadb.php"); //Inclusão do Banco de dados pegando SQL do banco 
-    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's';"; //passa uma instrução para o BANCO, com comandos SQL listando os usuários 
+    $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's';";
     $resultado = mysqli_query($link, $sql); 
+    $ativo = 's';
+
+    if($_SERVER['REQUEST_METHOD']  == 'POST'){
+        $ativo = $_POST['ativo'];
+        if($ativo == 's'){
+             //passa uma instrução para o BANCO, com comandos SQL listando os usuários 
+            $sql = "SELECT * FROM usuarios WHERE usu_ativo = 's';";
+            $resultado = mysqli_query($link, $sql); 
+        }else{
+            $sql = "SELECT * FROM usuarios WHERE usu_ativo = 'n';";
+            $resultado = mysqli_query($link, $sql); 
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +29,12 @@
     <body>
         <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
         <div class="container">
+            <form action="listausuario.php" method = "post">
+                <input type="radio" name="ativo" value="s" required onclick="submit()" <?=$ativo == "s"? "checked":""?>>Ativar<br>
+                <input type="radio" name="ativo" value="n" required onclick="submit()" <?=$ativo == "n"? "checked":""?>>Desativar
+            
+            </form>
+            <br><br><br>
             <table border=1>
                 <tr>
                     <th>Nome</th>

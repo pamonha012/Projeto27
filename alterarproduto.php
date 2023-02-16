@@ -8,7 +8,8 @@
         $descricao = $_POST['descricao'];
         $quantidade = $_POST['quantidade'];
         $preco = $_POST['preco'];
-        $sql = "UPDATE produtos SET pro_nome = '$nome', pro_descricao = '$descricao', pro_quantidade = '$quantidade', pro_preco = '$preco' WHERE pro_id = $id";
+        $ativo = $_POST['ativo'];
+        $sql = "UPDATE produtos SET pro_nome = '$nome', pro_descricao = '$descricao', pro_quantidade = '$quantidade', pro_preco = '$preco', pro_ativo = '$ativo' WHERE pro_id = $id";
         mysqli_query($link, $sql);
         header("Location: listaproduto.php");
         echo"<script>window.alert('PRODUTO ALTERADO COM SUCESSO');</script>";
@@ -24,6 +25,7 @@
         $descricao = $tbl[2];
         $quantidade = $tbl[3];
         $preco = $tbl[4];
+        $ativo = $tbl[5];
     }
 ?>
 
@@ -51,6 +53,11 @@
                 <br><br>
                 <label>Valor</label>
                 <input type="number" name="preco" id="valor" value="<?=$preco?>" required>
+                <br><br>
+                <label>Status: <?=$check = ($ativo == 's')?"Ativo":"Inativo";?></label>
+                <br>
+                <input type="radio" name="ativo" value="s" <?=$ativo == "s"? "checked":""?>>Ativar<br>
+                <input type="radio" name="ativo" value="n"<?=$ativo == "n"? "checked":""?>>Desativar
                 <br><br>
                 <input type="submit" value="Salvar">
             </form>

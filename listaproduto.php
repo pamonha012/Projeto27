@@ -1,6 +1,6 @@
 <?php
     include("conectadb.php"); //Inclusão do Banco de dados pegando SQL do banco 
-    $sql = "SELECT * FROM produtos;"; //passa uma instrução para o BANCO, com comandos SQL listando os produtos
+    $sql = "SELECT * FROM produtos WHERE pro_ativo = 's';"; //passa uma instrução para o BANCO, com comandos SQL listando os produtos
     $resultado = mysqli_query($link, $sql); 
 ?>
 

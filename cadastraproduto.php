@@ -16,8 +16,10 @@
         if($cont==1){
             echo"<script>window.alert('PROUTO JÁ CADASTRADO!!!')</script>";
         }else{
-            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco) VALUES ('$nome','$descricao','$quantidade', '$preco')";
+            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo) VALUES ('$nome','$descricao','$quantidade', '$preco', 's')";
             mysqli_query($link,$sql);
+            header("Location: listaproduto.php");
+            exit();
         }
     }    
 ?>
