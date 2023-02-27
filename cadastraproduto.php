@@ -30,15 +30,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastra Usuários</title>
+        <title>Cadastra Produto</title>
         <link rel="stylesheet" href="./estilos.css">
     </head>
     <body>
         <div class="container">
             <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+            <br><br>
             <form action="cadastraproduto.php" method="POST">
                 <h1>Cadastrar Produtos</h1>
-                <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
+                <input type="text" name="nome" id="nome" placeholder="Nome do produto" class="nomeUsu" required>
                 <br><br>
                 <input type="text" name="descricao" id="nome" placeholder="Descrição do produto" required>
                 <br><br>
@@ -47,6 +48,7 @@
                 <input type="number" name="preco" id="nome" placeholder="Valor do produto" required>
                 <p></p>
                 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
+                <button>Adicionar foto</button>
             </form>
         </div>
     </body>

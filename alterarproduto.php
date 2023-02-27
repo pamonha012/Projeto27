@@ -39,6 +39,7 @@
         <link rel="stylesheet" href="./estilos.css">
     </head>
     <body>
+        <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
         <div class="container">
             <form action="alterarproduto.php" method="post">
                 <input type="hidden" value="<?=$id?>" name="id" required> <!-- coleta o ID ao carregar a página de forma oculta -->
@@ -60,6 +61,7 @@
                 <input type="radio" name="ativo" value="n"<?=$ativo == "n"? "checked":""?>>Desativar
                 <br><br>
                 <input type="submit" value="Salvar">
+                <button>Adicionar foto</button>
             </form>
         </div>
     </body>
