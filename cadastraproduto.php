@@ -48,8 +48,17 @@
                 <input type="number" name="preco" id="nome" placeholder="Valor do produto" required>
                 <p></p>
                 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
-                <button>Adicionar foto</button>
+                <br><br>
+                <!-- Comando para recebimento de fotos -->
+                <label>Imagem</label>
+                <input type="file" name="foto1" id="img1" onchange="foto1()">
+                <img src="img/semfoto.png" width="100px" id="foto1a">
             </form>
+            <script>
+                function foto1(){
+                    document.getElementById("foto1a").src = "img/" (document.getElementById("img1").value).slice(12);
+                }
+            </script>
         </div>
     </body>
 </HTml>
