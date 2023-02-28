@@ -1,4 +1,5 @@
 <?php
+// fazendo conexão com o banco criado
 $servidor = "localhost";
 $banco = "projeto27";
 $usuario = "admin";

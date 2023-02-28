@@ -21,6 +21,7 @@
     $sql = "SELECT * FROM produtos WHERE pro_id = '$id'";
     $resultado = mysqli_query($link, $sql);
     while($tbl = mysqli_fetch_array($resultado)){
+        //$tbl[] -  pega o dado do campo 1 da tabela produtos criada no BD
         $nome = $tbl[1];
         $descricao = $tbl[2];
         $quantidade = $tbl[3];
