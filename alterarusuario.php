@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="./estilos.css">
     </head>
     <body>
-        <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+        <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
             <form action="alterarusuario.php" method="post">
                 <input type="hidden" value="<?=$id?>" name="id" required> <!-- coleta o ID ao carregar a página de forma oculta -->

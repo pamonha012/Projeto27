@@ -24,11 +24,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="./newestilo.css">
         <title>Lista Produtos</title>
     </head>
     <body>
-        <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+        <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
         <form action="listaproduto.php" method = "post">
             <!-- Botões de validação, mostrando se o produto está ou não ativo
@@ -46,6 +46,7 @@
                     <th>Quantidade</th>
                     <th>Valor</th>
                     <th>Status do produto</th>
+                    <th>Imagem</th>
                     <th>Alterar produto</th>
                 </tr>
                 <?php 
@@ -60,7 +61,9 @@
                             <!-- number_format altera '.' para ',' e usa apenas duas casas decimais -->
                             <td>R$<?= number_format($tbl[4],2,',','.',)?></td>
                             <td><?=$check = ($tbl[5] == "s")?"Ativo":"Desativado"?></td>
+                            <td><img src="img/<?=$tbl[6]?>.png" alt=""></td>
                             <td><a href="alterarproduto.php?id=<?= $tbl[0]?>"><input type="button" value="Alterar"></a></td>
+                            
                         </tr>
                 <?php
                     } 

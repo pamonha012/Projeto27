@@ -30,11 +30,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastra Usuários</title>
-        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="./newestilo.css">
     </head>
     <body>
         <div class="container">
-            <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+            <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
             <br><br>
             <!-- script para mostrar senha -->
             <script>

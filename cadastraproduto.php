@@ -5,6 +5,9 @@
         $descricao = $_POST['descricao'];
         $quantidade = $_POST['quantidade'];
         $preco = $_POST['preco'];
+        $foto1 = $_POST["foto1"];
+        //$foto2 = $_POST["foto2"];
+        if($foto1 == "") $img = "semfoto.png";
         include("conectadb.php");
          #Verifica produto existente utilizando um select sql
          $sql = "SELECT COUNT(pro_id) FROM produtos WHERE  pro_nome = '$nome'";
@@ -18,7 +21,7 @@
             echo"<script>window.alert('PROUTO JÁ CADASTRADO!!!')</script>";
         }else{
             //Insert sql para inserir o produto após a coleta de dados
-            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo) VALUES ('$nome','$descricao','$quantidade', '$preco', 's')";
+            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo, imagem1) VALUES ('$nome','$descricao','$quantidade', '$preco', 's', '$foto1')";
             mysqli_query($link,$sql); //Faz uma consulta no banco de dados 
             header("Location: listaproduto.php"); //quando o produto é cadastrado o header atualiza e leva o usuário para listaproduto.php
             exit();
@@ -33,11 +36,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastra Produto</title>
-        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="./newestilo.css">
     </head>
     <body>
         <div class="container">
-            <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+            <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
             <br><br>
             <form action="cadastraproduto.php" method="POST">
                 <h1>Cadastrar Produtos</h1>

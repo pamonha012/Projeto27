@@ -37,10 +37,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alterar Produtos</title>
-        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="./newestilo.css">
     </head>
     <body>
-        <a href="homesistema.html"> <button id="meuhome"><img src="./assets/home.png"></button></a>
+        <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
             <form action="alterarproduto.php" method="post">
                 <input type="hidden" value="<?=$id?>" name="id" required> <!-- coleta o ID ao carregar a página de forma oculta -->
