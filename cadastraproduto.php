@@ -1,13 +1,14 @@
 <?php
-    //coleta as variáveis do name ho input HTML e abre conexão com o banco
+    //coleta as variáveis do name no input HTML e abre conexão com o banco
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $nome = $_POST['nome'];
         $descricao = $_POST['descricao'];
         $quantidade = $_POST['quantidade'];
         $preco = $_POST['preco'];
         include("conectadb.php");
-         #Verifica produto existente
+         #Verifica produto existente utilizando um select sql
          $sql = "SELECT COUNT(pro_id) FROM produtos WHERE  pro_nome = '$nome'";
+         //Faz um consulta no banco de dados e verifica se o produto cadastrado existe ou não
          $resultado = mysqli_query($link,$sql);
          while($tbl = mysqli_fetch_array($resultado)){
             $cont = $tbl[0];
@@ -16,9 +17,10 @@
         if($cont==1){
             echo"<script>window.alert('PROUTO JÁ CADASTRADO!!!')</script>";
         }else{
+            //Insert sql para inserir o produto após a coleta de dados
             $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo) VALUES ('$nome','$descricao','$quantidade', '$preco', 's')";
-            mysqli_query($link,$sql);
-            header("Location: listaproduto.php");
+            mysqli_query($link,$sql); //Faz uma consulta no banco de dados 
+            header("Location: listaproduto.php"); //quando o produto é cadastrado o header atualiza e leva o usuário para listaproduto.php
             exit();
         }
     }    
