@@ -69,7 +69,8 @@
   input[type="text"],
   input[type="password"],
   input[type="number"],
-  input[type="decimal"] {
+  input[type="decimal"],
+  input[type="date"]{
     background-color: #e0dceb;
     border: none;
     border-radius: 3px;

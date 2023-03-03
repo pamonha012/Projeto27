@@ -49,15 +49,13 @@
             </script>
             <!-- FIM DO SCRIPT -->
             <form action="cadastrausuario.php" method="POST" class="cadastro">
-                <fieldset>
-                    <legend>Cadastrar Usuário:</legend>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" class="nomeUsu" required>
-                    <p></p>
-                    <input type="password" name="senha" id="senha" placeholder="Senha" class="senhaUsu" required>
-                    <img id="olinho" src="assets/eye.svg" onclick="mostrarSenha()">
-                    <p></p>
-                    <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
-                </fieldset>
+                <h1>Cadastrar Usuário</h1>
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="nomeUsu" required>
+                <p></p>
+                <input type="password" name="senha" id="senha" placeholder="Senha" class="senhaUsu" required>
+                <img id="olinho" src="assets/eye.svg" onclick="mostrarSenha()">
+                <p></p>
+                <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
             </form>
         </div>
     </body>
