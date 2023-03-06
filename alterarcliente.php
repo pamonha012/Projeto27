@@ -12,8 +12,9 @@
         $cidade = $_POST['cidade'];
         $cpf = $_POST['cpf'];
         $ativo = $_POST['ativo'];
+        $senha = $_POST['senha'];
         $sql = "UPDATE clientes SET cli_nome = '$nome', cli_datanasc = '$dtnasc', cli_telefone = '$telefone',
-        cli_logradouro = '$logradouro', cli_numero = '$numero', cli_cidade = '$cidade', cli_cpf = '$cpf', cli_ativo = '$ativo' WHERE cli_id = $id";
+        cli_logradouro = '$logradouro', cli_numero = '$numero', cli_cidade = '$cidade', cli_cpf = '$cpf', cli_ativo = '$ativo', cli_senha = '$senha' WHERE cli_id = $id";
 
         mysqli_query($link, $sql);
         header("Location: listacliente.php");
@@ -33,6 +34,7 @@
             $cidade = $tbl[6];
             $cpf = $tbl[7];
             $ativo = $tbl[8];
+            $senha = $tbl[9];
         }
     
 
@@ -45,7 +47,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alterar Usuários</title>
-        <link rel="stylesheet" href="./estilos.css">
+        <link rel="stylesheet" href="./newestilo.css">
     </head>
     <body>
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
@@ -58,7 +60,7 @@
                 <label>Data de Nascimento</label>
                 <input type="date" name="dataNasc" id="nome" value="<?=$dtnasc?>" required> 
                 <label>CPF</label>
-                <input type="text" name="cpf" id="nome" value="<?=$cpf?>" required>
+                <input type="text" name="cpf" id="nome" value="<?=$cpf?>" required  disabled="">
                 <label>Telefone</label>
                 <input type="text" name="telefone" id="nome" value="<?=$telefone?>" required>
                 <label>Logradouro</label>
@@ -67,6 +69,8 @@
                 <input type="text" name="numero" id="nome" value="<?=$numero?>" required>
                 <label>Cidade</label>
                 <input type="text" name="cidade" id="nome" value="<?=$cidade?>" required>
+                <label>Senha</label>
+                <input type="password" name="senha" id="nome" value="<?=$senha?>" required>
                 <p></p>
                 <label>Status: <?=$check = ($ativo == 's')?"Ativo":"Inativo";?></label>
                 <br>

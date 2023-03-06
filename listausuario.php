@@ -29,7 +29,7 @@
     <body>
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
-            <form action="listausuario.php" method = "post">
+            <form action="listausuario.php" method = "post" class="lista">
                 <input type="radio" name="ativo" value="s" required onclick="submit()" <?=$ativo == "s"? "checked":""?>>Ativado<br>
                 <input type="radio" name="ativo" value="n" required onclick="submit()" <?=$ativo == "n"? "checked":""?>>Desativado
             

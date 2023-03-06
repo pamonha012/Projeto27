@@ -30,7 +30,7 @@
     <body>
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
-        <form action="listacliente.php" method = "post">
+        <form action="listacliente.php" method = "post" class="lista">
             <!-- Botões de validação, mostrando se o cliente está ou não ativo
                  onclick="submit()" é um JS que já faz u, submit na página usando o navegador como recurso
                  $ativo== valida se  se o btnRadio foi acionado(checked)-->

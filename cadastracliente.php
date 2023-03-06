@@ -8,6 +8,7 @@
         $numero = $_POST['numero'];
         $cidade = $_POST['cidade'];
         $cpf = $_POST['cpf'];
+        $senha = $_POST['senha'];
 
         include("conectadb.php");
          #Verifica cliente existente
@@ -22,7 +23,7 @@
         if($cont==1){
             echo"<script>window.alert('CLIENTE JÁ CADASTRADO!!!')</script>";
         }else{
-            $sql = "INSERT INTO clientes (cli_nome, cli_datanasc, cli_telefone, cli_logradouro, cli_numero, cli_cidade, cli_cpf, cli_ativo) VALUES ('$nome','$dtnasc','$telefone','$logradouro','$numero','$cidade', '$cpf', 's')";
+            $sql = "INSERT INTO clientes (cli_nome, cli_datanasc, cli_telefone, cli_logradouro, cli_numero, cli_cidade, cli_cpf, cli_ativo, cli_senha) VALUES ('$nome','$dtnasc','$telefone','$logradouro','$numero','$cidade', '$cpf', 's', '$senha')";
             mysqli_query($link,$sql);
             header("Location: listacliente.php");
         }
@@ -59,6 +60,8 @@
                 <input type="text" name="numero" id="nome" placeholder="Número" required>
                 <p></p>
                 <input type="text" name="cidade" id="nome" placeholder="Cidade" required>
+                <p></p>
+                <input type="password" name="senha" id="nome" placeholder="Senha" required>
                 <p></p>
                 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar">
             </form>
