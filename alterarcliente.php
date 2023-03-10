@@ -52,7 +52,7 @@
     <body>
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
-            <form action="alterarcliente.php" method="post">
+            <form action="alterarcliente.php" method="post" class="lista">
                 <!-- coleta os dados do cliente e preenche seus respectivos txtbox  -->
                 <input type="hidden" value="<?=$id?>" name="id" required> 
                 <label>Nome</label>

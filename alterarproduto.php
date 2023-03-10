@@ -42,7 +42,7 @@
     <body>
         <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
-            <form action="alterarproduto.php" method="post">
+            <form action="alterarproduto.php" method="post" class="lista">
                 <input type="hidden" value="<?=$id?>" name="id" required> <!-- coleta o ID ao carregar a página de forma oculta -->
                 <label>Nome</label>
                 <input type="text" name="nome" id="nome" value="<?=$nome?>" required> <!-- coleta o nome do produto e preenche a txtbox  -->

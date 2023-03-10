@@ -61,7 +61,7 @@
                             <!-- number_format altera '.' para ',' e usa apenas duas casas decimais -->
                             <td>R$<?= number_format($tbl[4],2,',','.',)?></td>
                             <td><?=$check = ($tbl[5] == "s")?"Ativo":"Desativado"?></td>
-                            <td><img src="img/<?=$tbl[6]?>.png" alt=""></td>
+                            <td><img src="data:image/jpeg;base64,<?=$tbl[6]?>" width="100" height="100"></td>
                             <td><a href="alterarproduto.php?id=<?= $tbl[0]?>"><input type="button" value="Alterar"></a></td>
                             
                         </tr>

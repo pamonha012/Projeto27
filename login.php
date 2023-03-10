@@ -45,7 +45,7 @@
                 }
             </script>
             <!-- FIM DO SCRIPT -->
-            <form action="login.php" method="POST">
+            <form action="login.php" method="POST" class="lista">
                 <h1>Login de usuário</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome">
                 <p></p>

@@ -45,7 +45,7 @@
         <div class="container">
             <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
             <br><br>
-            <form action="cadastracliente.php" method="POST" class="cadastro">
+            <form action="cadastracliente.php" method="POST" class="lista">
                 <h1>Cadastrar Cliente</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome" required>
                 <p></p>

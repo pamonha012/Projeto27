@@ -48,7 +48,7 @@
                 }
             </script>
             <!-- FIM DO SCRIPT -->
-            <form action="cadastrausuario.php" method="POST" class="cadastro">
+            <form action="cadastrausuario.php" method="POST" class="lista">
                 <h1>Cadastrar Usuário</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome" class="nomeUsu" required>
                 <p></p>

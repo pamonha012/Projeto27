@@ -5,9 +5,14 @@
         $descricao = $_POST['descricao'];
         $quantidade = $_POST['quantidade'];
         $preco = $_POST['preco'];
-        $foto1 = $_POST["foto1"];
-        //$foto2 = $_POST["foto2"];
-        if($foto1 == "") $img = "semfoto.png";
+
+        //Criptografa a foto para o banco de dados
+    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+        $imagem_temp = $_FILES['imagem']['tmp_name'];
+        $imagem = file_get_contents($imagem_temp);
+        $imagem_base64 = base64_encode($imagem);
+    }
+
         include("conectadb.php");
          #Verifica produto existente utilizando um select sql
          $sql = "SELECT COUNT(pro_id) FROM produtos WHERE  pro_nome = '$nome'";
@@ -21,7 +26,7 @@
             echo"<script>window.alert('PROUTO JÁ CADASTRADO!!!')</script>";
         }else{
             //Insert sql para inserir o produto após a coleta de dados
-            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo, imagem1) VALUES ('$nome','$descricao','$quantidade', '$preco', 's', '$foto1')";
+            $sql = "INSERT INTO produtos (pro_nome, pro_descricao, pro_quantidade, pro_preco, pro_ativo, imagem1) VALUES ('$nome','$descricao','$quantidade', '$preco', 's', '$imagem_base64')";
             mysqli_query($link,$sql); //Faz uma consulta no banco de dados 
             header("Location: listaproduto.php"); //quando o produto é cadastrado o header atualiza e leva o usuário para listaproduto.php
             exit();
@@ -42,7 +47,7 @@
         <div class="container">
             <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
             <br><br>
-            <form action="cadastraproduto.php" method="POST">
+            <form action="cadastraproduto.php" method="POST" class="lista" enctype="multipart/form-data">
                 <h1>Cadastrar Produtos</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome do produto" class="nomeUsu" required>
                 <br><br>
@@ -56,8 +61,9 @@
                 <br><br>
                 <!-- Comando para recebimento de fotos -->
                 <label>Imagem</label>
-                <input type="file" name="foto1" id="img1" onchange="foto1()">
-                <img src="img/semfoto.png" width="100px" id="foto1a">
+                <img src="img/$foto1.png" width="100px" id="foto1a">
+                <input type="file" name="imagem" id="imagem">
+                
             </form>
             <script>
                 function foto1(){
