@@ -44,7 +44,7 @@
                     <th>Nome</th>
                     <th>Descrição do Produto</th>
                     <th>Quantidade</th>
-                    <th>Valor</th>
+                    <th>Valor unitário</th>
                     <th>Status do produto</th>
                     <th>Imagem</th>
                     <th>Alterar produto</th>

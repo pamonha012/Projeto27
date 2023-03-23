@@ -10,7 +10,7 @@
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
 
-        include("conectadb.php");
+        include("../conectadb.php");
          #Verifica cliente existente
          $sql = "SELECT COUNT(cli_id) FROM clientes WHERE  cli_cpf = '$cpf'";
          $resultado = mysqli_query($link,$sql);
@@ -25,12 +25,10 @@
         }else{
             $sql = "INSERT INTO clientes (cli_nome, cli_datanasc, cli_telefone, cli_logradouro, cli_numero, cli_cidade, cli_cpf, cli_ativo, cli_senha) VALUES ('$nome','$dtnasc','$telefone','$logradouro','$numero','$cidade', '$cpf', 's', '$senha')";
             mysqli_query($link,$sql);
-            header("Location: listacliente.php");
+            header("Location: loja.php");
         }
     }    
 ?>
-	
-
 
 <!DOCTYPE html> 
 <html lang='pt-br'>
@@ -42,10 +40,9 @@
         <link rel="stylesheet" href="./newestilo.css">
     </head>
     <body>
-    <a href="homesistema.html"><input type="button" id="menuhome" value="HOME SISTEMA"></a>
         <div class="container">
             <br><br><br>
-            <form action="cadastracliente.php" method="POST" class="lista">
+            <form action="clientecadastra.php" method="POST" class="lista">
                 <h1>Cadastrar Cliente</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome" required>
                 <p></p>

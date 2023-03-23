@@ -65,7 +65,7 @@
 
                 <label>Imagem</label>
                 <img src="img/$foto1.png" width="100px" id="foto1a">
-                <input type="file" name="imagem" id="imagem">
+                <input type="file" name="imagem" id="imagem" value="data:image/jpeg;base64<?=$imagem_base64?>" >
 
                 <br><br>
                 <label>Status: <?=$check = ($ativo == 's')?"Ativo":"Inativo";?></label>
