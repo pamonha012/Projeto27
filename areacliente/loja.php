@@ -25,10 +25,10 @@ session_start();
                     <tr>
                         <th>Nome</th>
                         <th>Descrição do Produto</th>
-                        <th>Quantidade</th>
+                        <!-- <th>Quantidade</th> -->
                         <th>Valor</th>
                         <th>Imagem</th>
-                        <th>Comprar</th>
+                        <th>Ver Produto</th>
                     </tr>
                     <?php 
                     //Preenchimento da tabela com os dados do banco
@@ -37,11 +37,11 @@ session_start();
                             <tr>
                                 <td><?=$tbl[1]?></td>
                                 <td><?=$tbl[2]?></td>
-                                <td><input type="number" name="quantidade" id="nome" placeholder="Quantidade" required></td>
+                                <!-- <td><input type="number" name="quantidade" id="nome" placeholder="Quantidade" required></td> -->
                                 <!-- number_format altera '.' para ',' e usa apenas duas casas decimais -->
                                 <td>R$<?= number_format($tbl[4],2,',','.',)?></td>
-                                <td><img src="data:image/jpeg;base64,<?=$tbl[6]?>" width="100" height="100"></td>         
-                                <td><a href="comprar.php?id=<?= $tbl[0]?>"><input type="button" value="Adicionar ao carrinho"></a></td>                  
+                                <td><img src="data:image/jpeg;base64,<?=$tbl[6]?>" width="100" height="100"></td>   
+                                <td><a href="verproduto.php?id=<?= $tbl[0]?>"><input type="button" value="Ver Produto"></a></td>                 
                             </tr>
                     <?php
                         } 
