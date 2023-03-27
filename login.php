@@ -18,7 +18,7 @@
         if($cont==1){
             header("Location: homesistema.html"); //se o usuário e senha estão corretos, manda para homesistema.html
         }else{
-            echo"<script>window.alert('USUÁRIOS OU SENHA INCORRETOS')</script>"; //se estiver incorretos mostra um comando JS que mostra um poup-up
+            echo"<script>window.alert('USUÁRIOS OU SENHA INCORRETOS');</script>"; //se estiver incorretos mostra um comando JS que mostra um poup-up
         }
     }
 ?>

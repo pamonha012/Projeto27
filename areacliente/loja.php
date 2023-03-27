@@ -16,9 +16,25 @@ session_start();
         <title>Loja do Projeto</title>
     </head>
     <body>
-        <h1>BOM DIA <?=$_SESSION['nomecliente'];?></h1>
+        <?php
+            if(isset($_SESSION['idcliente'])){
+        ?>
+            <h1 style="background-color: whitesmoke;">BOM DIA <?=$_SESSION['nomecliente'];?></h1>
+            <form id="formloja" action="logout.php" method="post">
+                <a href="carrinho.php"><input type="button" value="Área cliente"<?= $_SESSION['idcliente']?>></a>
+                <input type="submit" value="Sair">
+            </form>
+        <?php
+            }else{
+        ?>
+            <form action="logout.php" id="formloja" method="post">
+                <a href="logincliente.php"><input type="button" value="Login"></a>
+            </form>
+        <?php
+        }
+        ?>
+        
         <form action="" method="post" >
-            <a href="logincliente.php"><input type="button" id="menuhome" value="Login"></a>
             <div class="container"> 
                 <br><br><br>
                 <table border=1>
