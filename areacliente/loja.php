@@ -21,7 +21,7 @@ session_start();
         ?>
             <h1 style="background-color: whitesmoke;">BOM DIA <?=$_SESSION['nomecliente'];?></h1>
             <form id="formloja" action="logout.php" method="post">
-                <a href="carrinho.php"><input type="button" value="Área cliente"<?= $_SESSION['idcliente']?>></a>
+                <a href="carrinho.php"><input type="button" value="Carrinho"<?= $_SESSION['idcliente']?>></a>
                 <input type="submit" value="Sair">
             </form>
         <?php
