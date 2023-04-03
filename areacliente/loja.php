@@ -19,7 +19,7 @@ session_start();
         <?php
             if(isset($_SESSION['idcliente'])){
         ?>
-            <h1 style="background-color: whitesmoke;">BOM DIA <?=$_SESSION['nomecliente'];?></h1>
+            <h1 style="background-color: black;">BOM DIA <?=$_SESSION['nomecliente'];?></h1>
             <form id="formloja" action="logout.php" method="post">
                 <a href="carrinho.php"><input type="button" value="Carrinho"<?= $_SESSION['idcliente']?>></a>
                 <input type="submit" value="Sair">

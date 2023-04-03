@@ -1,4 +1,6 @@
 <?php
+session_start();
+session_destroy();
     //coleta as variáveis do name no input HTML e abre conexão com o banco
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $nome = $_POST['nome'];
@@ -28,6 +30,7 @@
             header("Location: loja.php");
         }
     }    
+
 ?>
 
 <!DOCTYPE html> 
